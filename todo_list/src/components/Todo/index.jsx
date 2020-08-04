@@ -9,8 +9,14 @@ class todo extends React.Component {
         }
     }
 
+    handleClick=()=>{
+        this.props.onClick(this.props.index)
+    }
+    handleTodoDelete=()=>{
+        this.props.handleTodoDelete(this.props.index)
+    }
     render() {
-        return <span>{this.props.text}</span>
+        return <span><span onClick={this.handleClick}>{this.props.text}</span> <button onClick={this.handleTodoDelete}>X</button></span>
     }
 }
 
