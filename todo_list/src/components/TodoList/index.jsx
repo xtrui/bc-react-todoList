@@ -21,7 +21,7 @@ class todoList extends React.Component {
         let path = document.URL.substring(document.URL.lastIndexOf('/') + 1);
         if (path === 'done') {
             return this.props.todoList.addTodo.map(((value, index) => {
-                if (value.status===0){
+                if (value.status===1){
                     return <div key={"2" + index}>
                         <Todo key={index} onClick={this.todoStatusChange} handleTodoDelete={this.handleTodoDelete}
                               index={index} text={this.props.todoList.addTodo[index].text}/>
@@ -32,7 +32,7 @@ class todoList extends React.Component {
 
         if (path === 'todo') {
             return this.props.todoList.addTodo.map(((value, index) => {
-                if (value.status===1){
+                if (value.status===0){
                     return <div key={"2" + index}>
                         <Todo key={index} onClick={this.todoStatusChange} handleTodoDelete={this.handleTodoDelete}
                               index={index} text={this.props.todoList.addTodo[index].text}/>
