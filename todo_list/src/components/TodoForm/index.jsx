@@ -9,9 +9,7 @@ class todoForm extends React.Component {
 
     addTodo = () => {
         let text = document.getElementById("inputBox").value;
-        // console.log(text)
         this.props.addTodo(text);
-
     }
 
     render() {
