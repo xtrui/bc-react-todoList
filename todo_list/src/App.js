@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TodoList from './components/TodoList'
-import TodoForm from './components/TodoForm'
+import TodoFormContainer from './components/TodoFormContainer'
 
 function App() {
     return (
@@ -11,7 +11,7 @@ function App() {
                 <img src={logo} className="App-logo" alt="logo"/>
                 <h2>TodoList</h2>
                 <TodoList/>
-                <TodoForm/>
+                <TodoFormContainer/>
             </header>
         </div>
     );
