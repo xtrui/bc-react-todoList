@@ -1,6 +1,6 @@
-export const addTodo = text => ({
+export const addTodo = (todo) => ({
     type: 'ADD_TODO',
-    text
+    todo:todo
 });
 
 export const deleteTodo = index =>(
