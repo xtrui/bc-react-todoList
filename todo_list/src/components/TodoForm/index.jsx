@@ -1,5 +1,7 @@
 import * as React from "react";
 import axios from '../../utils/MyAxios'
+import {Input} from 'antd';
+
 
 class todoForm extends React.Component {
 
@@ -20,8 +22,9 @@ class todoForm extends React.Component {
 
     render() {
         return <div>
-            <input type="text" id="inputBox"/>
-            <button onClick={this.addTodo}>add</button>
+            <Input placeholder="Basic usage" type="text" id="inputBox" style={{height: '60px'}}/>
+            <button style={{marginTop: "12px", width: '80px', height: '60px', fontSize: '24px'}} onClick={this.addTodo}>
+                <b>add</b></button>
         </div>
 
     }
