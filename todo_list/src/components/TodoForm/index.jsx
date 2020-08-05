@@ -14,7 +14,7 @@ class todoForm extends React.Component {
         let text = document.getElementById("inputBox").value;
         // let id = Number(Math.random().toString().substr(3,10) + Date.now()).toString(36);
         let todo = {content:text,status:true};
-        axios.post("https://5e9ec500fb467500166c4658.mockapi.io/todos",todo)
+        axios.post("/", todo)
         .then(response=>{
             this.props.addTodo(response.data);
         })

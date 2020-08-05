@@ -1,7 +1,6 @@
 import React from "react";
 import Todo from "../Todo"
 import axiosInstance from '../../utils/MyAxios'
-import axios from 'axios'
 
 class todoList extends React.Component {
     constructor(props) {
@@ -16,9 +15,11 @@ class todoList extends React.Component {
         //     })
         // }
         // )
-
-        if (this.props.todoList.addTodo.length===0) {
-            axios.get("https://5e9ec500fb467500166c4658.mockapi.io/todos").then(response => {
+        // axios.get("http://localhost:8081/todos").then(res=>{
+        //     console.log(res.data);
+        // })
+        if (this.props.todoList.addTodo.length === 0) {
+            axiosInstance.get("/").then(response => {
                 // console.log(response.data)
                 response.data.forEach((value, index) => {
                     this.props.addTodo(value);
@@ -32,7 +33,7 @@ class todoList extends React.Component {
         
         this.props.updateTodoStatus(index);
         let id = this.props.todoList.addTodo[index].id;
-        axiosInstance.put("https://5e9ec500fb467500166c4658.mockapi.io/todos/"+id,this.props.todoList.addTodo[index])
+        axiosInstance.put("" + id, this.props.todoList.addTodo[index])
         .then(res=>{
             console.log("更新成功",res.data)
         })
@@ -43,7 +44,7 @@ class todoList extends React.Component {
 
     handleTodoDelete = (index) => {
         let id = this.props.todoList.addTodo[index].id;
-        axiosInstance.delete("https://5e9ec500fb467500166c4658.mockapi.io/todos/"+id)
+        axiosInstance.delete("" + id)
         .then(res=>{
             console.log("delete ok",res.data,res.status);
         })
